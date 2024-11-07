@@ -1,0 +1,23 @@
+{
+    "and": "AND",
+    "or": "OR",
+    "not": "NOT",
+    "with": "AND",
+    "including":"AND",
+    "also":"AND",
+    "plus":"AND",
+    "besides":"AND",
+    "moreover":"AND",
+    "furthermore": "AND",
+    "alternatively": "OR",
+    "instead": "OR",
+    "otherwise": "OR",
+    "else": "OR",
+    "either": "OR",
+    "nor": "OR",
+    "elsewhere": "OR",
+    "except": "NOT",
+    "excluding": "NOT",
+    "without": "NOT",
+    "minus": "NOT"
+}

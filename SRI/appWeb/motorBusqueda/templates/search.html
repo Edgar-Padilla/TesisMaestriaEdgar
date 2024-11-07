@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block result_content %}
+
+{% if final_result.0|length > 0 %}
+    <b style="padding: 10px 90px; color: #646464">Results ({{ final_result.0|length }}):</b>
+    {% comment %}
+
+    {% if final_result.1 %}
+    <b style="padding: 10px 90px; color: #646464">Se muestran resultados para: {% for palabra in final_result.1 %}{{palabra}}, {% endfor %}</b>
+    {% endif %}
+    {% endcomment %}
+
+    {% if final_result.2 %}
+    <b style="padding: 10px 90px; color: #646464"> Potentially interesting: {% for palabra in final_result.2 %}{{palabra}} {% endfor %}</b>
+    {% endif %}
+    {% for result in final_result.0 %}
+        <div style="padding: 0 100px">
+            <h3 style="color: blue; padding: 0; margin: 0; border: 0;"><a href="{% static 'images/' %}{{ result.0 }}">Go to video</a></h3>
+            <h3 ><img  style="padding: 0;" src="{% static 'images/' %}{{ result.0 }}" alt="My image"></h3>
+            <h3 style="color: grey"> {{ result.2 }}</h3>
+            <br>
+        </div>
+        <br><br>
+    {% endfor %}
+{% else%}
+    <b style="padding: 0 90px; color: #646464;" id="web-result-id">No results found</b>
+{% endif %}
+
+
+
+{% endblock %}

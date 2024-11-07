@@ -1,0 +1,23 @@
+{% extends 'bases/base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="mainbody">
+    <img src="{% static 'logo/logoBUAP2.png' %}" alt="My image">
+    <form action="search" method="POST">
+        {% csrf_token %}
+        <div class="search">
+            <div class="search_input">
+                <span class="material-icons"></span>
+                <input type="text" name="search" autofocus x-webkit-speech>
+            </div>
+            <div class="search_button">
+                <a href="search" ><button type="submit">Search</button></a>
+                <a href="/"> <button     type="button">Home</button></a>
+            </div>
+        </div>
+    </form>
+    {% block result_content %}
+    {% endblock %}
+</div>
+{% endblock %}
